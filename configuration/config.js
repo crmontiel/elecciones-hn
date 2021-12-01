@@ -1,6 +1,6 @@
 const config = {
   app: {
-    port: "5000",
+    port: "80",
     host: "0.0.0.0",
     key: ""
   },
