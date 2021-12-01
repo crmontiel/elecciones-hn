@@ -1,0 +1,48 @@
+templateVersion: v2
+defaultRoute:
+  include:
+    entorno: false
+    pais: false
+
+
+
+env:
+
+  normal:
+    TZ: "America/Tegucigalpa"
+    NODE_ENV: "production"
+    PORT_FS: 80
+    HOST_FS: "0.0.0.0"
+    FS_SQL_VHUR_HOST: "192.168.1.42\\VHUR"
+    FS_SQL_VHUR_DB: "vhur_farsiman"
+    FS_SQL_WEB_USERS_HOST: "10.0.0.2"
+    FS_SQL_WEB_USERS_DB: "WebUsers"
+    FS_SQL_ACCIONES_DE_PERSONAL_HOST: "10.0.0.2"
+    FS_SQL_ACCIONES_DE_PERSONAL_DB: "RRHH_Farsiman"
+    FS_MYSQL_APP_CORPORATIVA_HOST: "mariadb-galera.grupofarsiman.io"
+    FS_MYSQL_APP_CORPORATIVA_DB: "RRHH_AccionesDePersonal"
+  secret:
+    - name: FS_SQL_RRHH_USER
+      secretName: sql-credential-corporativo
+      key: user
+    - name: FS_SQL_RRHH_PASSWORD
+      secretName: sql-credential-corporativo
+      key: pwd
+    - name: FS_SQL_WEB_USERS
+      secretName: sql-credential-sucursales
+      key: user
+    - name: FS_SQL_WEB_USER_PASSWORD
+      secretName: sql-credential-sucursales
+      key: pwd
+    - name: FS_SQL_VHUR_USERS
+      secretName: sql-credential-corporativo
+      key: user
+    - name: FS_SQL_VHUR_PASSWORD
+      secretName: sql-credential-corporativo
+      key: pwd
+    - name: FS_MYSQL_APP_CORPORATIVO_USERS
+      secretName: mysql-credential-corporativo
+      key: user
+    - name: FS_MYSQL_APP_CORPORATIVO_PASSWORD
+      secretName: mysql-credential-corporativo
+      key: pwd
